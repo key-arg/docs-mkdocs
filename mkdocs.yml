@@ -1,0 +1,98 @@
+site_name: Webmaster Statistics Guide
+site_description: Complete web analytics guide for beginners
+
+theme:
+  name: material
+  language: en  # английский как основной
+
+  palette:
+    - scheme: default
+      primary: olive
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.indexes    # Позволяет папкам быть кликабельными
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+    - navigation.path
+    - toc.follow
+
+plugins:
+  - search:
+      lang:
+        - en
+        - ru
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true  # английский по умолчанию
+          name: English
+          build: true
+          site_name: "Webmaster Statistics Guide"
+        - locale: ru
+          name: Русский
+          build: true
+          site_name: "Статистика для Вебмастеров"
+
+nav:
+  - Home: index.md
+  - Basics:
+      - basics/index.md
+      - What is Web Analytics: basics/web-analytics.md
+      - Getting Started: basics/getting-started.md
+  - Key Metrics:
+      - analytics/index.md
+      - Bounce Rate: analytics/bounce-rate.md
+      - Time on Site: analytics/time-on-site.md
+      - Conversions: analytics/conversions.md
+  - Tools:
+      - tools/index.md
+      - Google Analytics: tools/google-analytics.md
+      - Yandex.Metrica: tools/yandex-metrica.md
+  - Glossary:
+      - glossary/index.md
+      - Bounce Rate: glossary/bounce-rate.md    # ← Дублируйте важные термины
+      - A-B Testing: glossary/ab-testing.md
+      - CTR: glossary/ctr.md
+  - About: about.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - pymdownx.snippets:
+      base_path: 'docs'
+      check_paths: true
+
+extra_css:
+  - stylesheets/extra.css
