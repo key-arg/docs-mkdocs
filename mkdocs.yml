@@ -4,7 +4,6 @@ site_description: Complete web analytics guide for beginners
 theme:
   name: material
   language: en  # английский как основной
-
   palette:
     - scheme: default
       primary: olive
@@ -24,15 +23,22 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.breadcrumbs
     - search.highlight
     - content.code.copy
     - navigation.path
     - toc.follow
+    - content.action.edit    # Кнопка "Edit this page"
+    - content.action.view    # Кнопка "View source"
+
+edit_uri: edit/main/docs/
 
 plugins:
+  - awesome-pages
   - search:
       lang:
         - en
+        - uk
         - ru
   - i18n:
       docs_structure: suffix
@@ -45,6 +51,10 @@ plugins:
           name: English
           build: true
           site_name: "Webmaster Statistics Guide"
+        - locale: uk
+          name: Українська
+          build: true
+          site_name: "Статистика для Вебмастеров"
         - locale: ru
           name: Русский
           build: true
@@ -66,10 +76,25 @@ nav:
       - Google Analytics: tools/google-analytics.md
       - Yandex.Metrica: tools/yandex-metrica.md
   - Glossary:
-      - glossary/index.md
-      - Bounce Rate: glossary/bounce-rate.md    # ← Дублируйте важные термины
-      - A-B Testing: glossary/ab-testing.md
-      - CTR: glossary/ctr.md
+      - Overview: glossary/index.md
+      - Fundamentals:
+          - Overview: glossary/fundamentals/index.md
+          - Pageviews: glossary/fundamentals/pageviews.md
+          - Sessions: glossary/fundamentals/sessions.md
+          - Unique Visitors: glossary/fundamentals/unique-visitors.md
+          - Analytics: glossary/fundamentals/analytics.md
+          - Web Analytics: glossary/fundamentals/web-analytics.md
+          - Cardinality: glossary/fundamentals/cardinality.md
+          - Event Parameter: glossary/fundamentals/event-parameter.md
+          - KPI: glossary/fundamentals/kpi.md
+          - Metric vs Dimension: glossary/fundamentals/metric-vs-dimension.md
+          - Pageview & Screenview: glossary/fundamentals/pageview-screenview.md
+          - Property & Data Stream: glossary/fundamentals/property-data-stream.md
+          - Real-time Analytics: glossary/fundamentals/real-time-analytics.md
+          - Sampling & Thresholding: glossary/fundamentals/sampling-thresholding.md
+          - User & Session: glossary/fundamentals/user-session.md
+          - Hit (Legacy): glossary/fundamentals/hit-legacy.md
+          - View (Legacy): glossary/fundamentals/view-legacy.md
   - About: about.md
 
 markdown_extensions:
@@ -85,14 +110,16 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:  # Убрал дублирование
+      base_path: 'docs'
+      check_paths: true
   - pymdownx.tabbed:
       alternate_style: true
   - attr_list
   - md_in_html
-  - pymdownx.snippets:
-      base_path: 'docs'
-      check_paths: true
 
 extra_css:
   - stylesheets/extra.css
+
+repo_url: https://github.com/key-arg/docs-mkdocs
+repo_name: key-arg/docs-mkdocs

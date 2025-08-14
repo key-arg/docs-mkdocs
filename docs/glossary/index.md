@@ -1,31 +1,14 @@
-# Webmaster Statistics Guide
+# Glossary
 
-Welcome to the complete web analytics guide for beginners!
+Глоссарий терминов и понятий веб-аналитики.
 
-## What you'll find here
-```javascript
-<script>data-det="url"</script>
-```
+## Разделы
 
-- 📊 **Web Analytics Basics** - where to start
-- 📈 **Key Metrics** - important indicators
-- 🔧 **Tools** - popular services overview
-- 📚 **Glossary** - terminology explained
+- **[Fundamentals](fundamentals/)** - Основные понятия и термины
+- **[GA4](ga4/)** - Термины Google Analytics 4 *(скоро)*
+- **[Universal Analytics](ua/)** - Legacy термины UA *(скоро)*
+- **[Tools](tools/)** - Инструменты и сервисы *(скоро)*
 
-## Start with basics
+---
 
-If you're new to web analytics, we recommend starting with [Web Analytics Basics](basics/web-analytics.md).
-
-## Popular articles
-
-- [Bounce Rate Guide](analytics/bounce-rate.md)
-- [Time on Site](analytics/time-on-site.md)
-- [Google Analytics Setup](tools/google-analytics.md)
-
-## Why web analytics matters
-
-Understanding your website statistics helps you:
-- Make data-driven decisions
-- Improve user experience
-- Increase conversions
-- Track marketing effectiveness
+*Глоссарий постоянно пополняется новыми терминами*
