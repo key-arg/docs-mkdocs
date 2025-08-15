@@ -1,4 +1,4 @@
-# Bounce Rate
+# Bounce Rate2
 
 **Bounce Rate** (bounce rate) is an important metric in web analytics that measures the percentage of sessions in which a user viewed only one page of the site and did not perform any further interactions, after which they left the resource. This metric helps evaluate the quality of traffic and the relevance of content, indicating potential issues with visitor engagement.
 
