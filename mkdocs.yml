@@ -59,6 +59,19 @@ plugins:
           name: Русский
           build: true
           site_name: "Статистика для Вебмастеров"
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+          remove_empty_space: true
+          reduce_boolean_attributes: true
+          remove_optional_attribute_quotes: false
+      css_files:
+          - stylesheets/extra.css
+      js_files:
+          - javascripts/extra.js
 
 nav:
   - Home: index.md
@@ -84,6 +97,7 @@ nav:
           - Unique Visitors: glossary/fundamentals/unique-visitors.md
           - Bounce Rate: glossary/fundamentals/bounce-rate.md
           - Exit Rate: glossary/fundamentals/exit-rate.md
+          - Scroll Depth: glossary/fundamentals/scroll-depth.md
           - Analytics: glossary/fundamentals/analytics.md
           - Web Analytics: glossary/fundamentals/web-analytics.md
           - Cardinality: glossary/fundamentals/cardinality.md
