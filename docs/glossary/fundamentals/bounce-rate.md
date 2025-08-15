@@ -1,4 +1,4 @@
-# Bounce Rate2
+# Bounce Rate
 
 **Bounce Rate** (bounce rate) is an important metric in web analytics that measures the percentage of sessions in which a user viewed only one page of the site and did not perform any further interactions, after which they left the resource. This metric helps evaluate the quality of traffic and the relevance of content, indicating potential issues with visitor engagement.
 
@@ -13,7 +13,7 @@ In the context of analytics systems, such as our analytics counter, *bounce rate
 It is important to note that bounce rate **does not** always indicate a problem: on single-page sites or landing pages, a high rate may be normal if the goal is achieved (for example, viewing information).
 
 !!! tip "Tip for Beginners"
-If you're just starting with analytics, remember: bounce rate is a quality indicator. A high value may signal irrelevant content or technical errors. For deeper analysis, combine it with metrics like *time on page* or *exit rate*.
+    If you're just starting with analytics, remember: bounce rate is a quality indicator. A high value may signal irrelevant content or technical errors. For deeper analysis, combine it with metrics like *time on page* or *exit rate*.
 
 ## Difference from Other Metrics
 
@@ -40,10 +40,10 @@ For a beginner webmaster, it's important to understand how this metric affects s
 To track bounce rate, install the code of our analytics counter on every page of the site. Our system automatically calculates the indicator based on sessions and interactions.
 
 !!! info "Example"
-Suppose 100 sessions came to the site in a day. Of them, 60 were with one pageview and no further actions. Bounce rate = 60%. If users spend little time in these sessions, it's a signal to improve the content.
+    Suppose 100 sessions came to the site in a day. Of them, 60 were with one pageview and no further actions. Bounce rate = 60%. If users spend little time in these sessions, it's a signal to improve the content.
 
 !!! info "Example"
-On a blog, an article gained 200 sessions, bounce rate — 80%. Analysis shows traffic from social networks: users click on the headline but leave without reading. Solution — optimize the text or add internal links.
+    On a blog, an article gained 200 sessions, bounce rate — 80%. Analysis shows traffic from social networks: users click on the headline but leave without reading. Solution — optimize the text or add internal links.
 
 ## Factors Influencing the Metric
 
