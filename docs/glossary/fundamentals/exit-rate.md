@@ -20,7 +20,7 @@ It's important to understand that **every session** has an exit page—the last 
 
 To better understand exit rate, let's compare it with related metrics:
 
-- **Bounce Rate (показатель отказов)**: Percentage of single-page sessions. Bounces are always exits, but not all exits are bounces.
+- **Bounce Rate**: Percentage of single-page sessions. Bounces are always exits, but not all exits are bounces.
 - **Pageviews (просмотры страниц)**: Total number of times a page was viewed. Used as the denominator in exit rate calculation.
 - **Engagement Rate (уровень вовлеченности)**: The opposite of bounce rate, showing sessions with meaningful interaction.
 
