@@ -21,7 +21,7 @@ To better understand bounce rate, let's compare it with similar terms:
 
 - **Pageviews (page views)**: The total number of page loads. A high bounce rate is often associated with a low number of pageviews per session.
 - **Sessions (sessions)**: The total number of visits. Bounce rate is the percentage of "bad" sessions out of the total.
-- **Exit rate (exit rate)**: The percentage of sessions that ended on a specific page, regardless of the number of views.
+- **[Exit rate](exit-rate.md)**: The percentage of sessions that ended on a specific page, regardless of the number of views.
 
 | Metric | What it Measures | Example Usage |
 |------------------|---------------------------------------|---------------------------------------|

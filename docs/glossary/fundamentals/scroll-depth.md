@@ -29,7 +29,7 @@ scrollThresholds: [10, 25, 50, 75, 90, 100]
 
 ### Advanced Tracking Considerations
 
-- **Viewport size variation**: Different devices show different amounts of content "above the fold"
+- **[Viewport](viewport.md) size variation**: Different devices show different amounts of content "above the fold"
 - **Dynamic content**: Pages with lazy loading or infinite scroll require special handling
 - **Time-based tracking**: Combining scroll depth with time spent provides richer insights
 - **Interaction tracking**: Correlating scrolls with clicks, video plays, or form submissions

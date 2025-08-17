@@ -19,7 +19,7 @@ It's important to note that pageviews **do not** account for visitor uniqueness:
 
 To better understand pageviews, let's compare them with similar terms:
 
-- **Sessions**: A group of user interactions with a site within a limited time frame (usually 30 minutes). One session can include multiple pageviews.
+- **[Sessions](sessions.md)**: A group of user interactions with a site within a limited time frame (usually 30 minutes). One session can include multiple pageviews.
 - **Unique pageviews**: Counts page views only once per session, even if the user reloaded it several times.
 - **Hits**: A lower-level metric that records any request to the server (e.g., loading an image or script), not just pages.
 

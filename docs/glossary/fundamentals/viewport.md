@@ -232,7 +232,7 @@ Viewport considerations for touch devices:
 
 ### Key Metrics to Monitor
 
-Track these viewport-related metrics:
+Track these viewport-related metrics, including [scroll depth](scroll-depth.md) patterns:
 
 **Dimension distribution:**
 

@@ -93,25 +93,19 @@ nav:
       - Fundamentals:
           - Overview: glossary/fundamentals/index.md
           - Pageviews: glossary/fundamentals/pageviews.md
+          - Pageview & Screenview: glossary/fundamentals/pageview-screenview.md
           - Sessions: glossary/fundamentals/sessions.md
           - Unique Visitors: glossary/fundamentals/unique-visitors.md
           - Bounce Rate: glossary/fundamentals/bounce-rate.md
           - Exit Rate: glossary/fundamentals/exit-rate.md
           - Scroll Depth: glossary/fundamentals/scroll-depth.md
           - Viewport: glossary/fundamentals/viewport.md
-          - Analytics: glossary/fundamentals/analytics.md
-          - Web Analytics: glossary/fundamentals/web-analytics.md
-          - Cardinality: glossary/fundamentals/cardinality.md
           - Event Parameter: glossary/fundamentals/event-parameter.md
           - KPI: glossary/fundamentals/kpi.md
           - Metric vs Dimension: glossary/fundamentals/metric-vs-dimension.md
-          - Pageview & Screenview: glossary/fundamentals/pageview-screenview.md
-          - Property & Data Stream: glossary/fundamentals/property-data-stream.md
           - Real-time Analytics: glossary/fundamentals/real-time-analytics.md
-          - Sampling & Thresholding: glossary/fundamentals/sampling-thresholding.md
           - User & Session: glossary/fundamentals/user-session.md
-          - Hit (Legacy): glossary/fundamentals/hit-legacy.md
-          - View (Legacy): glossary/fundamentals/view-legacy.md
+
   - About: about.md
 
 markdown_extensions:

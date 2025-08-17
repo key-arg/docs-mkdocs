@@ -1,16 +1,22 @@
 title: Fundamentals
 nav:
   - index.md
-  - pageviews.md
-  - bounce-rate.md
-  - web-analytics.md
-  - real-time-analytics.md
-  - metric-vs-dimension.md
-  - event-parameter.md
-  - cardinality.md
-  - user-session.md
-  - hit-legacy.md
-  - view-legacy.md
-  - property-data-stream.md
-  - kpi.md
-  - sampling-thresholding.md
+  - Users & Sessions:
+    - unique-visitors.md
+    - sessions.md
+    - user-session.md
+  - Pageviews & Interactions:
+    - pageviews.md
+    - pageview-screenview.md
+  - Behavior Metrics:
+    - bounce-rate.md
+    - exit-rate.md
+    - scroll-depth.md
+  - Data Structure:
+    - metric-vs-dimension.md
+    - event-parameter.md
+  - Technical Aspects:
+    - viewport.md
+    - real-time-analytics.md
+  - Strategic Metrics:
+    - kpi.md

@@ -19,7 +19,7 @@ It's important to note that unique visitors are counted **within the selected ti
 
 To better understand unique visitors, let's compare it with similar terms:
 
-- **Sessions**: Number of "visits" to the site. One unique visitor can generate multiple sessions.
+- **[Sessions](sessions.md)**: Number of "visits" to the site. One unique visitor can generate multiple sessions.
 - **Pageviews**: Total number of page loads. One unique visitor can view many pages.
 - **Returning visitors**: A subset of unique visitors who have previously visited the site.
 

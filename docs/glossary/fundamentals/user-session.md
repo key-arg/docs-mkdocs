@@ -1,253 +1,68 @@
-# User & Session
+# Event & Event Parameter
 
-**Definition:** Users are unique individuals who visit your website, while sessions represent individual periods of user activity and interaction with your site.
+Events and event parameters represent **specific user interactions and their contextual details** in web analytics. While pageviews track when pages load, events capture what users actually do on those pages - providing deeper insights into engagement patterns.
 
-## Understanding Users
+## Understanding Events
 
-### What is a User?
-A user represents a unique visitor to your website, identified through various methods and tracked across multiple sessions over time.
+An event is any discrete user action that you want to measure separately from pageviews. Common events include button clicks, video plays, form submissions, file downloads, and scroll depth. These interactions reveal **actual user engagement beyond simple page visits**.
 
-### User Types:
-- **New Users** - First-time visitors to your website
-- **Returning Users** - Previously identified visitors coming back
-- **Active Users** - Users who had at least one session in a specified time period
+Events consist of two components:
 
-### User Identification Methods:
+- **Event name**: Identifies the action (e.g., "purchase", "video_play", "download")
+- **Event parameters**: Provide context about the action
 
-#### Traditional Methods:
-- **Cookies** - Browser-stored identifiers
-- **Client ID** - Randomly generated unique identifier
-- **IP Address + User Agent** - Combination for basic identification
-
-#### Modern Approaches:
-- **User ID** - Custom identifier for logged-in users
-- **Google Signals** - Cross-device identification (with consent)
-- **First-party data** - Email addresses, account IDs
-- **Fingerprinting** - Device and browser characteristics
-
-```javascript
-// Setting custom User ID in GA4
-gtag('config', 'GA_MEASUREMENT_ID', {
-  'user_id': 'USER_12345'
-});
-```
-
-## Understanding Sessions
-
-### What is a Session?
-A session is a group of user interactions that take place on your website within a given time frame.
-
-### Session Triggers:
-- **First page load** - Session begins
-- **30-minute timeout** - Session ends after inactivity
-- **Midnight boundary** - New session starts at midnight
-- **Campaign change** - UTM parameter changes trigger new session
-
-### Session Duration Calculation:
-```
-Session Duration = Last Interaction Time - First Interaction Time
-```
-
-**Important Note:** Single-page sessions show 0 duration because there's no "last interaction" timestamp.
-
-## Cross-Device Challenges
-
-### The Problem:
-- **Multiple devices** - Same user on phone, tablet, laptop
-- **Different browsers** - Chrome on mobile, Safari on desktop
-- **Cookie limitations** - Third-party cookie restrictions
-- **Privacy measures** - ITP, browser blocking, ad blockers
-
-### Solutions:
-
-#### User ID Implementation:
-```javascript
-// When user logs in
-gtag('config', 'GA_MEASUREMENT_ID', {
-  'user_id': user.email_hash,
-  'custom_map': {
-    'dimension1': 'membership_level'
-  }
-});
-```
-
-#### Cross-Domain Tracking:
-```javascript
-// Link multiple domains
-gtag('config', 'GA_MEASUREMENT_ID', {
-  'linker': {
-    'domains': ['example.com', 'shop.example.com']
-  }
-});
-```
-
-#### Enhanced Conversions:
-```javascript
-// First-party data for better attribution
-gtag('event', 'conversion', {
-  'enhanced_conversion_data': {
-    'email': user.email,
-    'phone_number': user.phone
-  }
-});
-```
-
-## Practical Examples
-
-### E-commerce Scenario:
-```
-User Journey:
-Day 1: Mobile → Browse products → Add to cart → Leave
-Day 3: Desktop → Return → Complete purchase
-
-Analytics View:
-- 1 User
-- 2 Sessions  
-- 1 Conversion (attributed to last session)
-```
-
-### Content Site Scenario:
-```
-User Journey:
-Morning: Read Article A → Share on social → Leave
-Afternoon: Click social link → Read Article B → Subscribe
-
-Analytics View:
-- 1 User
-- 2 Sessions
-- 1 Goal Conversion (newsletter signup)
-```
-
-## Key Metrics and Analysis
-
-### User Metrics:
-- **Total Users** - Unique visitors in time period
-- **New vs Returning** - User acquisition vs retention
-- **User Lifetime Value** - Revenue per user over time
-- **User Retention** - Percentage returning after first visit
-
-### Session Metrics:
-- **Total Sessions** - All session count
-- **Sessions per User** - Average visits per unique user
-- **Average Session Duration** - Mean time spent per session
-- **Pages per Session** - Content consumption depth
-
-### Analysis Examples:
-
-#### User Acquisition Analysis:
-```
-New Users: 2,500 (70%)
-Returning Users: 1,071 (30%)
-Sessions per User: 1.8
-```
-
-**Insight:** High new user acquisition but low return rate suggests need for retention optimization.
-
-#### Session Quality Analysis:
-```
-Average Session Duration: 3:24
-Pages per Session: 2.8
-Bounce Rate: 42%
-```
-
-**Insight:** Good engagement depth but room for improvement in initial page experience.
-
-## Technical Implementation
-
-### Basic Setup:
-```javascript
-// Initialize GA4 tracking
-gtag('config', 'GA_MEASUREMENT_ID', {
-  'send_page_view': true,
-  'cookie_expires': 63072000, // 2 years
-  'cookie_update': true
-});
-```
-
-### Enhanced User Tracking:
-```javascript
-// Custom user properties
-gtag('config', 'GA_MEASUREMENT_ID', {
-  'custom_map': {
-    'dimension1': 'user_type',
-    'dimension2': 'signup_method',
-    'dimension3': 'subscription_status'
-  }
-});
-
-// Set user properties
-gtag('event', 'user_engagement', {
-  'user_type': 'premium',
-  'signup_method': 'social',
-  'subscription_status': 'active'
-});
-```
-
-### Session Control:
-```javascript
-// Manual session control (rare use case)
-gtag('config', 'GA_MEASUREMENT_ID', {
-  'session_timeout': 1800 // 30 minutes in seconds
-});
-```
-
-## Privacy and Compliance
-
-### Cookie-less Tracking:
-- **Server-side tracking** - Process events on your server
-- **First-party data** - Use logged-in user identifiers
-- **Consent-based tracking** - Respect user preferences
-- **Aggregated reporting** - Focus on trends vs individuals
-
-### GDPR Compliance:
-```javascript
-// Conditional tracking based on consent
-function initializeAnalytics(consent) {
-  if (consent.analytics) {
-    gtag('config', 'GA_MEASUREMENT_ID', {
-      'anonymize_ip': true,
-      'allow_google_signals': consent.advertising
-    });
-  }
-}
-```
-
-## Best Practices
-
-!!! tip "Optimization Strategies"
-**👤 User Experience**
-- Optimize for returning users with personalization
-- Track user journey across multiple sessions
-- Identify and fix drop-off points in user flow
-
-    **📊 Session Quality**
-    - Improve content to increase session duration
-    - Add internal links to boost pages per session
-    - Optimize page load speed to reduce bounce rate
+!!! info "Example: E-commerce Purchase Event"
+    Event name: `purchase`
     
-    **🔄 Cross-Device Strategy**
-    - Implement User ID for logged-in users
-    - Use enhanced conversions for better attribution
-    - Focus on first-party data collection
+    Parameters:
 
-## Common Challenges
+    - `transaction_id`: ORDER123456
+    - `value`: 99.99
+    - `currency`: USD
+    - `items`: 3 products purchased
+    - `payment_method`: credit_card
 
-!!! warning "Technical Considerations"
-**🍪 Cookie Limitations**
-- Third-party cookie deprecation
-- Browser privacy features (ITP, ETP)
-- Ad blocker interference
+## Event Parameters Explained
 
-    **📱 Cross-Device Tracking**
-    - Multiple device usage patterns
-    - App-to-web user journeys
-    - Incomplete user identification
+Parameters transform generic events into actionable data by adding specific details. They answer questions like: What was clicked? How much was spent? Which product was viewed? This granular information enables precise analysis and segmentation.
+
+Common parameter types include:
+
+- **Monetary values**: Purchase amounts, discount values
+- **Identifiers**: Product IDs, user segments, content categories  
+- **Descriptive text**: Button labels, search terms, error messages
+- **Numeric metrics**: Percentages, counts, durations
+
+!!! tip "Best Practice: Consistent Naming"
+    Use lowercase with underscores for parameter names (e.g., `product_category` not `ProductCategory`). Maintain consistent naming across all events to simplify analysis and reporting.
+
+## Privacy Considerations
+
+Event tracking must balance analytical insights with user privacy. Never include personally identifiable information (PII) directly in event parameters. Instead of tracking email addresses, use hashed user IDs. Replace actual names with user segments or categories.
+
+!!! warning "Privacy Checklist"
+    Before implementing events, ensure:
+
+    - No PII in parameter values
+    - Consent obtained for tracking
+    - Data retention policies defined
+    - User opt-out mechanisms available
+
+## Common Implementation Challenges
+
+Many platforms like GA4 limit event parameters to 25 per event and restrict custom event names to 500 per property. These limitations often force compromises in tracking granularity. Additionally, inconsistent parameter naming across teams creates data fragmentation.
+
+Our analytics platform removes these artificial restrictions, allowing unlimited parameters and events while maintaining performance. We also provide built-in parameter validation and naming conventions to ensure data consistency across your organization.
+
+!!! info "Example: Content Engagement Tracking"
+    Track article reading with meaningful parameters:
     
-    **⚖️ Privacy Regulations**
-    - GDPR and CCPA compliance requirements
-    - Consent management complexity
-    - Data retention and deletion policies
+    Event: `article_read`
 
----
+    - `article_category`: technology
+    - `read_percentage`: 75
+    - `time_spent`: 240 seconds
+    - `author`: content_team
+    - `publication_date`: 2024-01-15
 
-**Related:** [Analytics](analytics.md) • [Event & Event Parameter](event-parameter.md) • [Pageview & Screenview](pageview-screenview.md)
+Events with rich parameters enable powerful analysis - from understanding content performance to optimizing user journeys. The key is planning your event taxonomy thoughtfully before implementation.
