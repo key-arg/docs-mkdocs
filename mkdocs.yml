@@ -59,6 +59,21 @@ plugins:
           name: Русский
           build: true
           site_name: "Статистика для Вебмастеров"
+  - blog:
+      blog_dir: blog  # директория с постами блога
+      post_dir: "{blog}/posts"  # где хранятся посты
+      post_date_format: "yyyy-MM-dd"
+      post_url_format: "{date}/{slug}"
+      authors_file: "{blog}/.authors.yml"  # файл с авторами
+      categories: true
+      categories_name: Категории
+      categories_url_format: "category/{slug}"
+      archive: true
+      archive_name: Архив
+      archive_date_format: "yyyy"
+      archive_url_format: "archive/{date}"
+      pagination: true
+      pagination_per_page: 10
   - minify:
       minify_html: true
       minify_js: true
