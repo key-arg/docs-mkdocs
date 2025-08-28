@@ -1,20 +1,31 @@
-/* Стиль для навигации с левым бордером */
+/* Import Inter Variable font */
+@import url('https://rsms.me/inter/inter.css');
 
-.md-nav__item {
-    border-left: 2px solid #e6e6e6;
-    padding-left: 10px;
-}
-a.md-nav__link{
-    margin-top: 0px;
-    padding-top: .625em;
-    margin-bottom: 0px;
-    padding-bottom: .625em;
-}
-ul.md-nav__list {
-    margin-top: 20px;
+/* Custom font stack */
+:root {
+  --md-text-font: "Inter Variable", "Inter", "SF Pro Display", -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --md-code-font: "JetBrains Mono", "SF Mono", Monaco, Consolas, "Courier New", monospace;
 }
 
-.md-nav__item:active {
-    border-left: 2px solid #7e7e7e;
-    padding-left: 10px;
+/* Override Material for MkDocs font loading */
+body {
+  font-family: var(--md-text-font);
+  font-feature-settings: 'liga' 1, 'calt' 1; /* Enable ligatures for Inter */
+}
+
+/* Support for Inter Variable */
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: "Inter Variable", var(--md-text-font);
+  }
+}
+
+/* Apply font to headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--md-text-font);
+}
+
+/* Apply font to navigation */
+.md-nav, .md-tabs__link, .md-header__title {
+  font-family: var(--md-text-font);
 }

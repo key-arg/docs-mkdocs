@@ -4,6 +4,7 @@ site_description: Complete web analytics guide for beginners
 theme:
   name: material
   language: en  # английский как основной
+  font: false  # Отключаем загрузку шрифтов Google
   palette:
     - scheme: default
       primary: olive
@@ -19,9 +20,9 @@ theme:
         name: Switch to light mode
   features:
     - navigation.indexes    # Позволяет папкам быть кликабельными
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
+  #  - navigation.tabs
+  #  - navigation.sections
+  #  - navigation.expand
     - navigation.top
     - navigation.breadcrumbs
     - search.highlight
@@ -34,46 +35,26 @@ theme:
 edit_uri: edit/main/docs/
 
 plugins:
-  - awesome-pages
-  - search:
-      lang:
-        - en
-        - uk
-        - ru
+  - search
   - i18n:
-      docs_structure: suffix
-      fallback_to_default: true
-      reconfigure_material: true
-      reconfigure_search: true
-      languages:
-        - locale: en
-          default: true  # английский по умолчанию
-          name: English
-          build: true
-          site_name: "Webmaster Statistics Guide"
-        - locale: uk
-          name: Українська
-          build: true
-          site_name: "Статистика для Вебмастеров"
-        - locale: ru
-          name: Русский
-          build: true
-          site_name: "Статистика для Вебмастеров"
-  - blog:
-      blog_dir: blog  # директория с постами блога
-      post_dir: "{blog}/posts"  # где хранятся посты
-      post_date_format: "yyyy-MM-dd"
-      post_url_format: "{date}/{slug}"
-      authors_file: "{blog}/.authors.yml"  # файл с авторами
-      categories: true
-      categories_name: Категории
-      categories_url_format: "category/{slug}"
-      archive: true
-      archive_name: Архив
-      archive_date_format: "yyyy"
-      archive_url_format: "archive/{date}"
-      pagination: true
-      pagination_per_page: 10
+       docs_structure: suffix
+       fallback_to_default: true
+       reconfigure_material: true
+       reconfigure_search: true
+       languages:
+         - locale: en
+           default: true
+           name: English
+           build: true
+           site_name: "Webmaster Statistics Guide"
+         - locale: uk
+           name: Українська
+           build: true
+           site_name: "Статистика для Вебмастеров"
+         - locale: ru
+           name: Русский
+           build: true
+           site_name: "Статистика для Вебмастеров"
   - minify:
       minify_html: true
       minify_js: true
@@ -99,28 +80,130 @@ nav:
       - Bounce Rate: analytics/bounce-rate.md
       - Time on Site: analytics/time-on-site.md
       - Conversions: analytics/conversions.md
-  - Tools:
-      - tools/index.md
-      - Google Analytics: tools/google-analytics.md
-      - Yandex.Metrica: tools/yandex-metrica.md
+  - User Behavior & Engagement:
+      - Overview: behavior/index.md
+      - Bounce Rate: behavior/bounce-rate.md
+      - Engagement Rate: behavior/engagement-rate.md
+      - Engaged Session: behavior/engaged-session.md
+      - Exit Rate: behavior/exit-rate.md
+      - Time on Page: behavior/time-on-page.md
+      - Session Duration: behavior/session-duration.md
+      - Dwell Time: behavior/dwell-time.md
+      - Scroll Depth: behavior/scroll-depth.md
+      - Heat Maps: behavior/heat-maps.md
+      - User Flow & Path Analysis: behavior/user-flow.md
+      - Retention Rate: behavior/retention-rate.md
+      - Churn Rate: behavior/churn-rate.md
+      - Stickiness (DAU/MAU): behavior/stickiness.md
+      - New vs Returning Users: behavior/new-vs-returning.md
+      - DAU/WAU/MAU: behavior/dau-wau-mau.md
+      - Behavioral Targeting: behavior/behavioral-targeting.md
+  - Traffic Acquisition & Sources:
+      - Overview: traffic/index.md
+      - Traffic Source: traffic/traffic-source.md
+      - Channel: traffic/channel.md
+      - Source/Medium: traffic/source-medium.md
+      - Campaign: traffic/campaign.md
+      - UTM Parameter: traffic/utm-parameter.md
+      - Organic Traffic: traffic/organic-traffic.md
+      - Paid Traffic: traffic/paid-traffic.md
+      - Referral Traffic: traffic/referral-traffic.md
+      - Direct Traffic: traffic/direct-traffic.md
+      - Email: traffic/email.md
+      - Social Media: traffic/social-media.md
+      - Affiliate: traffic/affiliate.md
+      - Influencer: traffic/influencer.md
+      - Marketplace: traffic/marketplace.md
+      - Dark Social: traffic/dark-social.md
+      - QR Code Tracking: traffic/qr-code-tracking.md
+      - Cross-Domain Tracking: traffic/cross-domain-tracking.md
+      - Cross-Device Tracking: traffic/cross-device-tracking.md
+      - Deep Link & Deferred Deep Link: traffic/deep-link.md
+  - Attribution & Marketing Measurement:
+      - Overview: attribution/index.md
+      - Attribution Model: attribution/attribution-model.md
+      - Last-Click Attribution: attribution/last-click-attribution.md
+      - First-Click Attribution: attribution/first-click-attribution.md
+      - Linear Attribution: attribution/linear-attribution.md
+      - Time-Decay Attribution: attribution/time-decay-attribution.md
+      - Position-Based (U-Shaped): attribution/position-based-attribution.md
+      - Data-Driven Attribution: attribution/data-driven-attribution.md
+      - Multi-Touch Attribution: attribution/multi-touch-attribution.md
+      - Marketing Mix Modeling: attribution/marketing-mix-modeling.md
+      - View-Through Conversions: attribution/view-through-conversions.md
+      - Click-Through Attribution: attribution/click-through-attribution.md
+      - Post-View/Post-Click: attribution/post-view-post-click.md
+      - Lookback Window: attribution/lookback-window.md
+      - Conversion Lag: attribution/conversion-lag.md
+      - Incrementality: attribution/incrementality.md
+      - Lift Study: attribution/lift-study.md
+      - Geo Experiment: attribution/geo-experiment.md
+      - Holdout: attribution/holdout.md
+      - Matched-Market Test: attribution/matched-market-test.md
+      - Cross-Device Conversions: attribution/cross-device-conversions.md
+  - Privacy & Compliance:
+      - Overview: privacy-compliance/index.md
+      - Personal Data/Personal Information: privacy-compliance/personal-data.md
+      - PII (Personally Identifiable Information): privacy-compliance/pii.md
+      - Sensitive Personal Data: privacy-compliance/sensitive-personal-data.md
+      - Pseudonymous Data: privacy-compliance/pseudonymous-data.md
+      - Anonymous Data: privacy-compliance/anonymous-data.md
+      - De-identification: privacy-compliance/de-identification.md
+      - Pseudonymization/Anonymization: privacy-compliance/pseudonymization-anonymization.md
+      - Differential Privacy: privacy-compliance/differential-privacy.md
+      - K-Anonymity/L-Diversity/T-Closeness: privacy-compliance/k-anonymity-l-diversity-t-closeness.md
+      - Data Minimization: privacy-compliance/data-minimization.md
+      - Purpose Limitation: privacy-compliance/purpose-limitation.md
+      - Storage Limitation: privacy-compliance/storage-limitation.md
+      - Lawful Basis: privacy-compliance/lawful-basis.md
+      - Consent: privacy-compliance/consent.md
+      - Legitimate Interests: privacy-compliance/legitimate-interests.md
+      - Contractual Necessity: privacy-compliance/contractual-necessity.md
+      - GDPR (General Data Protection Regulation): privacy-compliance/gdpr.md
+      - ePrivacy Directive: privacy-compliance/eprivacy-directive.md
+      - CCPA/CPRA (California Consumer Privacy Act): privacy-compliance/ccpa-cpra.md
+      - VCDPA/CPA/CTDPA/UCPA (State Privacy Acts): privacy-compliance/vcdpa-cpa-ctdpa-ucpa.md
+      - LGPD (Brazil): privacy-compliance/lgpd.md
+      - PIPEDA (Canada): privacy-compliance/pipeda.md
+      - POPIA (South Africa): privacy-compliance/popia.md
+      - PDPA (Singapore, Thailand): privacy-compliance/pdpa.md
+      - HIPAA (US): privacy-compliance/hipaa.md
+      - COPPA (US): privacy-compliance/coppa.md
+      - PCI DSS: privacy-compliance/pci-dss.md
+      - SOC 2: privacy-compliance/soc-2.md
+      - ISO/IEC 27001/27701/27018: privacy-compliance/iso-iec-27001-27701-27018.md
+      - NIST Privacy Framework: privacy-compliance/nist-privacy-framework.md
+      - Consent Management Platform (CMP): privacy-compliance/consent-management-platform.md
+      - Cookie Banner: privacy-compliance/cookie-banner.md
+      - Data Processing Agreement (DPA): privacy-compliance/data-processing-agreement.md
+      - Standard Contractual Clauses (SCC): privacy-compliance/standard-contractual-clauses.md
+      - Binding Corporate Rules (BCR): privacy-compliance/binding-corporate-rules.md
+      - Transfer Impact Assessment (TIA): privacy-compliance/transfer-impact-assessment.md
+      - Data Residency: privacy-compliance/data-residency.md
+      - Do Not Sell or Share: privacy-compliance/do-not-sell-or-share.md
+      - Opt-in/Opt-out: privacy-compliance/opt-in-opt-out.md
+      - Age Gating/Parental Consent: privacy-compliance/age-gating-parental-consent.md
+      - Data Subject Access Request (DSAR): privacy-compliance/data-subject-access-request.md
+      - Right to be Forgotten/Erasure: privacy-compliance/right-to-be-forgotten.md
+      - Right to Portability/Objection: privacy-compliance/right-to-portability-objection.md
+      - Global Privacy Control (GPC): privacy-compliance/global-privacy-control.md
+      - IAB TCF/GPP: privacy-compliance/iab-tcf-gpp.md
+      - Security by Design/Privacy by Design: privacy-compliance/security-by-design-privacy-by-design.md
   - Glossary:
       - Overview: glossary/index.md
-      - Fundamentals:
-          - Overview: glossary/fundamentals/index.md
-          - Pageviews: glossary/fundamentals/pageviews.md
-          - Pageview & Screenview: glossary/fundamentals/pageview-screenview.md
-          - Sessions: glossary/fundamentals/sessions.md
-          - Unique Visitors: glossary/fundamentals/unique-visitors.md
-          - Bounce Rate: glossary/fundamentals/bounce-rate.md
-          - Exit Rate: glossary/fundamentals/exit-rate.md
-          - Scroll Depth: glossary/fundamentals/scroll-depth.md
-          - Viewport: glossary/fundamentals/viewport.md
-          - Event Parameter: glossary/fundamentals/event-parameter.md
-          - KPI: glossary/fundamentals/kpi.md
-          - Metric vs Dimension: glossary/fundamentals/metric-vs-dimension.md
-          - Real-time Analytics: glossary/fundamentals/real-time-analytics.md
-          - User & Session: glossary/fundamentals/user-session.md
-
+      - A/B Testing: glossary/ab-testing.md
+      - Conversion Rate: glossary/conversion-rate.md
+      - Event Parameter: glossary/event-parameter.md
+      - KPI: glossary/kpi.md
+      - Metric vs Dimension: glossary/metric-vs-dimension.md
+      - Pageviews: glossary/pageviews.md
+      - Pageview & Screenview: glossary/pageview-screenview.md
+      - Real-time Analytics: glossary/real-time-analytics.md
+      - Sessions: glossary/sessions.md
+      - Traffic Sources: traffic/traffic-sources.md
+      - Unique Visitors: glossary/unique-visitors.md
+      - User & Session: glossary/user-session.md
+      - Viewport: glossary/viewport.md
   - About: about.md
 
 markdown_extensions:
@@ -141,6 +224,9 @@ markdown_extensions:
       check_paths: true
   - pymdownx.tabbed:
       alternate_style: true
+  - toc:
+      permalink: true
+      toc_depth: 3
   - attr_list
   - md_in_html
 

@@ -1,4 +1,22 @@
-title: Glossary
+title: Fundamentals
 nav:
-  - Overview: index.md
-  - Fundamentals: fundamentals/
+  - index.md
+  - Users & Sessions:
+    - unique-visitors.md
+    - sessions.md
+    - user-session.md
+  - Pageviews & Interactions:
+    - pageviews.md
+    - pageview-screenview.md
+  - Behavior Metrics:
+    - bounce-rate.md
+    - exit-rate.md
+    - scroll-depth.md
+  - Data Structure:
+    - metric-vs-dimension.md
+    - event-parameter.md
+  - Technical Aspects:
+    - viewport.md
+    - real-time-analytics.md
+  - Strategic Metrics:
+    - kpi.md
